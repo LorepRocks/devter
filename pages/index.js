@@ -1,10 +1,11 @@
+import { style } from '@mui/system'
 import Head from 'next/head'
-import Link from 'next/link'
-import {useRouter} from 'next/router'
-// devit
+import Image from 'next/image'
+import Button from '../components/Button'
+import GitHub from '../components/Icons/GitHub'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const router = useRouter()
 
   return (
     <>
@@ -13,37 +14,23 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>
-          <a href="https://nextjs.org">devter</a>
-        </h1>
-        <nav>
-          <Link href='/timeline'>
-            <a>
-              timeline
-            </a>
-          </Link>
-        </nav>
-      </main>
+      <div className={styles.container}>
+        <main className={styles.main}>
+            <section className={styles.wrap}>
+                <Image src='/devter-logo.png' layout='fixed' width={180} height={180}></Image>
+                <h1 className={styles.title}>Devter</h1>
+                <h2 className={styles.subtitle}>
+                    <span>Talk about development with developers</span> 👩🏻‍💻👨🏻‍💻</h2>
+                <div>
+                    <Button>
+                        <GitHub width={24} height={24} fill="#fff"/>
+                        Login with GitHub
+                    </Button>
+                </div>
+            </section>
+        </main>
+      </div>
 
-      <style jsx>{`
-        h1 {
-          text-align: center;
-          font-size: 48px;
-        }
-        nav {
-          font-size: 24px;
-          text-align: center;
-        }
-        .another-title {
-          color: #333;
-          font-size: 24px;
-        }
-        a {
-          color: orange;
-          text-decoration: none;
-        }
-      `}</style>
     </>
   )
 }
