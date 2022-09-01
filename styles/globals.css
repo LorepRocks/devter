@@ -6,16 +6,14 @@
   --white: #f9f9f6;
 }
 
-
 html,
 body {
   padding: 0;
   margin: 0;
-  background-image: 
-    radial-gradient(var(--primary) 1px, transparent 1px), 
+  background-image: radial-gradient(var(--primary) 1px, transparent 1px),
     radial-gradient(var(--primary) 1px, transparent 1px);
   background-position: 0 0, 25px 25px;
-  background-size:  50px 50px;
+  background-size: 50px 50px;
 }
 
 a {
