@@ -14,6 +14,7 @@ body {
     radial-gradient(var(--primary) 1px, transparent 1px);
   background-position: 0 0, 25px 25px;
   background-size: 50px 50px;
+  background-color: var(--white);
 }
 
 a {
@@ -25,7 +26,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -33,4 +34,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */

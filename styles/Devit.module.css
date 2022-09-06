@@ -1,0 +1,14 @@
+.article {
+  display: flex;
+  border-bottom: 2px solid #eaf7ff;
+  padding: 10px 15px;
+}
+
+.avatarContainer {
+  padding-right: 10px;
+}
+
+.message {
+  margin: 0;
+  line-height: 1.3125;
+}

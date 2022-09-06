@@ -1,0 +1,20 @@
+.generalContainer {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  position: relative;
+}
+.principal {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 520px) {
+  .principal {
+    height: 90vh;
+    width: 520px;
+  }
+}
