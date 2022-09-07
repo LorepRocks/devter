@@ -19,8 +19,9 @@ const HomePage = () => {
         <section>
           {timeline.map((devit) => (
             <Devit
-              key={devit.key}
+              key={devit.id}
               username={devit.username}
+              avatar={devit.avatar}
               message={devit.message}
               id={devit.id}
             />
