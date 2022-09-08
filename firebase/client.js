@@ -6,6 +6,8 @@ import {
   collection,
   addDoc,
   getDocs,
+  query,
+  orderBy,
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -60,14 +62,14 @@ export const addDevit = ({ avatar, content, userId, userName }) => {
 }
 
 export const fetchLatestDevits = () => {
-  return getDocs(collection(db, "devits")).then((snapshot) => {
+  const ref = query(collection(db, "devits"), orderBy("createAt", "desc"))
+  return getDocs(ref).then((snapshot) => {
     return snapshot.docs.map((doc) => {
       const data = doc.data()
       const id = doc.id
       const { createAt } = data
-      const date = new Date(createAt.seconds * 1000)
-      const normalizedCreateAt = new Intl.DateTimeFormat("en-GB").format(date)
-      return { ...data, id, createAt: normalizedCreateAt }
+
+      return { ...data, id, createAt: +createAt.toDate() }
     })
   })
 }
