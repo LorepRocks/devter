@@ -1,0 +1,19 @@
+.article {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  padding: 10px 15px;
+}
+
+.avatarContainer {
+  padding-right: 10px;
+}
+
+.message {
+  margin: 0;
+  line-height: 1.3125;
+}
+
+.date {
+  color: #555;
+  font-size: 14px;
+}

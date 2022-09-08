@@ -1,0 +1,33 @@
+.header {
+  background: #ffffffaa;
+  backdrop-filter: blur(5px);
+  position: sticky;
+  height: 49px;
+  top: 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header h2 {
+  font-size: 21px;
+  font-weight: 800;
+  padding-left: 15px;
+}
+
+.nav {
+  background: #fff;
+  position: fixed;
+  height: 49px;
+  bottom: 0;
+  border-top: 1px solid #eee;
+  width: 100%;
+}
+
+@media (min-width: 520px) {
+  .nav,
+  .header {
+    width: 520px;
+  }
+}

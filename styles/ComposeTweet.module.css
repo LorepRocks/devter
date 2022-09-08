@@ -1,0 +1,14 @@
+.textarea {
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  font-size: 21px;
+  resize: none;
+  margin: 1rem;
+  outline: 0;
+  min-height: 200px;
+}
+
+.btnContainer {
+  padding: 15px;
+}
