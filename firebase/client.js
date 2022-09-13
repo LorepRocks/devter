@@ -9,6 +9,7 @@ import {
   query,
   orderBy,
 } from "firebase/firestore"
+import { getStorage, ref, uploadBytesResumable } from "firebase/storage"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDLKQ5IP6k45uiWec8hcSlIZb0k6cHaf30",
@@ -23,6 +24,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const auth = getAuth()
 const db = getFirestore(app)
+const storage = getStorage(app)
 
 const mapUserFromFirebaseAuthToUser = (resp) => {
   const data = resp.user || resp
@@ -49,10 +51,11 @@ export const loginWithGitHub = () => {
   return signInWithPopup(auth, githubProvider)
 }
 
-export const addDevit = ({ avatar, content, userId, userName }) => {
+export const addDevit = ({ avatar, content, userId, userName, img }) => {
   return addDoc(collection(db, "devits"), {
     avatar,
     content,
+    img,
     userId,
     userName,
     createAt: Timestamp.fromDate(new Date()),
@@ -72,4 +75,9 @@ export const fetchLatestDevits = () => {
       return { ...data, id, createAt: +createAt.toDate() }
     })
   })
+}
+
+export const uploadImage = (file) => {
+  const storageRef = ref(storage, `images/${file.name}`)
+  return uploadBytesResumable(storageRef, file)
 }

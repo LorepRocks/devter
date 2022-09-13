@@ -1,5 +1,8 @@
+.form {
+  margin: 10px;
+}
 .textarea {
-  width: 100%;
+  width: 93%;
   border: 0;
   padding: 15px;
   font-size: 21px;
@@ -7,8 +10,37 @@
   margin: 1rem;
   outline: 0;
   min-height: 200px;
+  border: 3px solid transparent;
+  border-radius: 10px;
 }
 
 .btnContainer {
   padding: 15px;
+}
+.imageSection {
+  position: relative;
+}
+
+.img {
+  border-radius: 10px;
+  height: auto;
+  width: 100%;
+}
+
+.btnClose {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dragBorder {
+  border: 3px dashed #09f;
 }

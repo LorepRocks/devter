@@ -1,7 +1,7 @@
 import styles from "styles/Devit.module.css"
 import Avatar from "components/Avatar"
 import useTimeAgo from "hooks/useTimeAgo"
-const Devit = ({ avatar, userName, content, id, createAt }) => {
+const Devit = ({ avatar, userName, content, id, createAt, img }) => {
   const timeago = useTimeAgo(createAt)
   return (
     <>
@@ -16,6 +16,7 @@ const Devit = ({ avatar, userName, content, id, createAt }) => {
             <date className={styles.date}>{timeago}</date>
           </header>
           <p className={styles.message}>{content}</p>
+          {img && <img src={img} className={styles.devitImg} />}
         </section>
       </article>
     </>
