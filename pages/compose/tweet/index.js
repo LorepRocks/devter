@@ -1,5 +1,6 @@
 import styles from "styles/ComposeTweet.module.css"
 import Button from "components/Button"
+import Avatar from "components/Avatar"
 import useUser from "hooks/useUser"
 import { useEffect, useState } from "react"
 
@@ -102,29 +103,39 @@ const ComposeTweet = () => {
       <Head>
         <title>Create Devit / Devter </title>
       </Head>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <textarea
-          onChange={handleChange}
-          className={clsx(styles.textarea, {
-            [styles.dragBorder]: drag === DRAG_IMAGE_STATES.DRAG_OVER,
-          })}
-          placeholder="What's up?"
-          onDragEnter={handleDragEnter}
-          onDragLeave={handleDragLeave}
-          onDrop={handleDrop}
-        ></textarea>
-        {imgURL && (
-          <section className={styles.imageSection}>
-            <button className={styles.btnClose} onClick={() => setImgURL(null)}>
-              x
-            </button>
-            <img className={styles.img} src={imgURL} />
+      <section className={styles.formContainer}>
+        {user && (
+          <section className={styles.avatarContainer}>
+            <Avatar src={user.avatar} />
           </section>
         )}
-        <div className={styles.btnContainer}>
-          <Button disabled={isButtonDisabled}>Devitear</Button>
-        </div>
-      </form>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <textarea
+            onChange={handleChange}
+            className={clsx(styles.textarea, {
+              [styles.dragBorder]: drag === DRAG_IMAGE_STATES.DRAG_OVER,
+            })}
+            placeholder="What's up?"
+            onDragEnter={handleDragEnter}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+          ></textarea>
+          {imgURL && (
+            <section className={styles.imageSection}>
+              <button
+                className={styles.btnClose}
+                onClick={() => setImgURL(null)}
+              >
+                x
+              </button>
+              <img className={styles.img} src={imgURL} />
+            </section>
+          )}
+          <div className={styles.btnContainer}>
+            <Button disabled={isButtonDisabled}>Devitear</Button>
+          </div>
+        </form>
+      </section>
     </>
   )
 }
