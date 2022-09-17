@@ -1,31 +1,21 @@
-import { firestore } from "../../../firebase/admin"
+import { firebaseAdmin } from "../../../firebase/admin"
 export default (req, res) => {
   const { query } = req
   const { id } = query
 
-  console.log(firestore)
-
-  const db = firestore.database()
-  const ref = db.ref("devits")
-
-  console.log(ref)
-
-  res.json({ id })
-
-  /* ref
-    .orderByChild("id")
-    .equalTo(id)
-    .on("child_added", (snapshot) => {
-      console.log(snapshot.key)
-      res.json(snapshot)
-    }) */
-
-  /* firestore.query(
-    collection("devits")
-    .where("id", "==", id))
+  firebaseAdmin
+    .firestore()
+    .collection("devits")
+    .doc(id)
     .get()
     .then((doc) => {
       const data = doc.data()
-      res.json(data)
-    }) */
+      const id = doc.id
+      const { createAt } = data
+
+      res.json({ ...data, id, createAt: +createAt.toDate() })
+    })
+    .catch((e) => {
+      res.status(404).end()
+    })
 }

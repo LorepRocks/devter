@@ -1,1 +1,1 @@
-export const DEFAULT_LANGUAGE = navigator.language
+export const DEFAULT_LANGUAGE = "es-ES"
