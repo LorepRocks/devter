@@ -13,7 +13,9 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.3",
+    "clsx": "^1.2.1",
     "firebase": "^9.9.3",
+    "firebase-admin": "^11.0.1",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"

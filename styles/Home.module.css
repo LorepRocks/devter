@@ -16,6 +16,10 @@
   padding-left: 15px;
 }
 
+.section {
+  flex: 1;
+}
+
 .nav {
   background: #fff;
   position: fixed;
@@ -23,6 +27,25 @@
   bottom: 0;
   border-top: 1px solid #eee;
   width: 100%;
+  display: flex;
+}
+
+.nav a {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.nav a:hover {
+  background: radial-gradient(#0099ff22 15%, transparent 16%);
+  background-size: 180px 180px;
+  background-position: center;
+}
+
+.nav a:hover > :global(svg) {
+  stroke: var(--primary);
 }
 
 @media (min-width: 520px) {

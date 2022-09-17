@@ -4,6 +4,11 @@
   padding: 10px 15px;
 }
 
+.article:hover {
+  background: #f5f8fa;
+  cursor: pointer;
+}
+
 .avatarContainer {
   padding-right: 10px;
 }
@@ -16,4 +21,16 @@
 .date {
   color: #555;
   font-size: 14px;
+  cursor: pointer;
+}
+
+.date:hover {
+  text-decoration: underline;
+}
+
+.devitImg {
+  border-radius: 10px;
+  height: auto;
+  width: 100%;
+  margin-top: 10px;
 }
